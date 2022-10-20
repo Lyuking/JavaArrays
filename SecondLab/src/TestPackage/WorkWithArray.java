@@ -132,7 +132,7 @@ public class WorkWithArray {
         array[counter] = temp;
         return counter;
     }
-    protected static int[] RemoveDuplicates(int[] array)
+/*     protected static int[] RemoveDuplicates(int[] array)
     {
         int counter = 0;
         for (int i = 0; i < array.length-1; i++)
@@ -154,7 +154,7 @@ public class WorkWithArray {
         for (int i = 0; i < array.length-counter; i++)
             arrayWithoutCopies[i] = array[i];
         return arrayWithoutCopies;
-    }
+    }*/
 
     protected static int GetDuplicatesCount(int[] array) {
         int counter = 0;
@@ -182,5 +182,9 @@ public class WorkWithArray {
         else{
             return  array;
         }
+    }
+
+    public static int[] GetFirst(int[] inputArray, int count) {
+        return count > inputArray.length ? inputArray : Arrays.copyOf(inputArray, count);
     }
 }
