@@ -150,10 +150,26 @@ public class WorkWithArray {
                 }
             }
         }
-        int arrayWithoutCopies[] = new int[counter];
-        for (int i = 0; i < counter; i++)
+        int arrayWithoutCopies[] = new int[array.length-counter];
+        for (int i = 0; i < array.length-counter; i++)
             arrayWithoutCopies[i] = array[i];
         return arrayWithoutCopies;
+    }
+
+    protected static int GetDuplicatesCount(int[] array) {
+        int counter = 0;
+        for (int i = 0; i < array.length - 1 - counter; i++) {
+
+            for (int j = i + 1; j < array.length - counter; j++) {
+                if (array[i] == array[j]) {
+                    for (int k = j; k < array.length - 1; k++) {
+                        array[k] = array[k + 1];
+                    }
+                    counter++;
+                }
+            }
+        }
+        return counter;
     }
     public static int[] GetLast(int[] array, int count){
         if (count<=array.length){
