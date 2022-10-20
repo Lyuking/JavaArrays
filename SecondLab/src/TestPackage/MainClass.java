@@ -18,23 +18,29 @@ public class MainClass {
             s1.append(questArray1[i] + " ");
         System.out.println("Исходный массив: " + s1);
 
-/*        int[] solutionArray1 = WorkWithArray.RemoveDuplicates(questArray1);
+        int[] solutionArray1 = WorkWithArray.RemoveDuplicates(questArray1.clone());
         StringBuilder s2 = new StringBuilder();
         for(int i = 0; i < solutionArray1.length; i++)
             s2.append(solutionArray1[i] + " ");
-        System.out.println("Конечный массив: " + s2);*/
+        System.out.println("Конечный массив: " + s2);
 
+        int count = WorkWithArray.GetDuplicatesCount(questArray1.clone());
+        System.out.println("Кол-во дубликатов: " + count);
 
-        int[] resultArr = WorkWithArray.GetLast(questArray1,4);
-        for (int i = 0; i < resultArr.length; i++) {
-            System.out.println(resultArr[i]);
-        }
-
-        int[] solutionArray2 = WorkWithArray.GetFirst(questArray1, 5);
-        StringBuilder s3 = new StringBuilder();
+        int c = 4;
+        int[] solutionArray2 = WorkWithArray.GetFirst(questArray1.clone(), c);
+        StringBuilder s4 = new StringBuilder();
         for(int i = 0; i < solutionArray2.length; i++)
-            s3.append(solutionArray2[i] + " ");
-        System.out.println("Результат задания 2: " + s3);
+            s4.append(solutionArray2[i] + " ");
+
+        System.out.println("Первые " + c + ": " + s4);
+        int[] resultArr = WorkWithArray.GetLast(questArray1.clone(),c);
+        StringBuilder s3 = new StringBuilder();
+        for(int i = 0; i < resultArr.length; i++)
+            s3.append(resultArr[i] + " ");
+        System.out.println("Последние " + c + ": " + s3);
+
+
 
     }
     static void GetBubbleInfo(int array[][])

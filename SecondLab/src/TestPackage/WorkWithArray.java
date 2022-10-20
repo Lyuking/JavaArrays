@@ -132,29 +132,25 @@ public class WorkWithArray {
         array[counter] = temp;
         return counter;
     }
-/*     protected static int[] RemoveDuplicates(int[] array)
+    protected static int[] RemoveDuplicates(int[] array)
     {
         int counter = 0;
-        for (int i = 0; i < array.length-1; i++)
-        {
+        for (int i = 0; i < array.length - 1 - counter; i++) {
 
-            for (int j = i+1; j < array.length; j++)
-            {
-                if(array[i]==array[j])
-                {
-                    for (int k = j; k < array.length-1; k++)
-                    {
-                        array[k] = array[k+1];
+            for (int j = i + 1; j < array.length - counter; j++) {
+                if (array[i] == array[j]) {
+                    for (int k = j; k < array.length - 1; k++) {
+                        array[k] = array[k + 1];
                     }
                     counter++;
                 }
             }
         }
-        int arrayWithoutCopies[] = new int[array.length-counter];
-        for (int i = 0; i < array.length-counter; i++)
+        int arrayWithoutCopies[] = new int[array.length - counter];
+        for (int i = 0; i < array.length - counter; i++)
             arrayWithoutCopies[i] = array[i];
         return arrayWithoutCopies;
-    }*/
+    }
 
     protected static int GetDuplicatesCount(int[] array) {
         int counter = 0;
@@ -175,7 +171,7 @@ public class WorkWithArray {
         if (count<=array.length){
             int[] lastEl = new int[count];
             for (int i = 0; i < count; i++) {
-                lastEl[i] = array[array.length - 1 - count + i];
+                lastEl[i] = array[array.length - count + i];
             }
             return  lastEl;
         }
