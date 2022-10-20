@@ -1,7 +1,5 @@
 package TestPackage;
 
-import javafx.util.Pair;
-
 import java.util.Arrays;
 import java.util.Random;
 
@@ -137,10 +135,10 @@ public class WorkWithArray {
     protected static int[] RemoveDuplicates(int[] array)
     {
         int counter = 0;
-        for (int i = 0; i < array.length-1 - counter; i++)
+        for (int i = 0; i < array.length-1; i++)
         {
 
-            for (int j = i+1; j < array.length-counter; j++)
+            for (int j = i+1; j < array.length; j++)
             {
                 if(array[i]==array[j])
                 {
@@ -152,29 +150,21 @@ public class WorkWithArray {
                 }
             }
         }
-        int arrayWithoutCopies[] = new int[array.length-counter];
-        for (int i = 0; i < array.length-counter; i++)
+        int arrayWithoutCopies[] = new int[counter];
+        for (int i = 0; i < counter; i++)
             arrayWithoutCopies[i] = array[i];
         return arrayWithoutCopies;
     }
-    protected static int GetDuplicatesCount(int[] array)
-    {
-        int counter = 0;
-        for (int i = 0; i < array.length-1 - counter; i++)
-        {
-
-            for (int j = i+1; j < array.length-counter; j++)
-            {
-                if(array[i]==array[j])
-                {
-                    for (int k = j; k < array.length-1; k++)
-                    {
-                        array[k] = array[k+1];
-                    }
-                    counter++;
-                }
+    public static int[] GetLast(int[] array, int count){
+        if (count<=array.length){
+            int[] lastEl = new int[count];
+            for (int i = 0; i < count; i++) {
+                lastEl[i] = array[array.length - 1 - count + i];
             }
+            return  lastEl;
         }
-        return counter;
+        else{
+            return  array;
+        }
     }
 }

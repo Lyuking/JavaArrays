@@ -2,8 +2,7 @@ package TestPackage;
 
 import java.util.Arrays;
 
-public class
-MainClass {
+public class MainClass {
     public static void main(String[] args) {
     int[][] array = WorkWithArray.GetFilledArray(10000);
         GetBubbleInfo(array.clone() );
@@ -24,7 +23,13 @@ MainClass {
         for(int i = 0; i < solutionArray1.length; i++)
             s2.append(solutionArray1[i] + " ");
         System.out.println("Конечный массив: " + s2);
-        System.out.println("Кол-во повторений: " + WorkWithArray.GetDuplicatesCount(questArray1));
+
+
+        int[] resultArr = WorkWithArray.GetLast(questArray1,4);
+        for (int i = 0; i < resultArr.length; i++) {
+            System.out.println(resultArr[i]);
+        }
+
     }
     static void GetBubbleInfo(int array[][])
     {
