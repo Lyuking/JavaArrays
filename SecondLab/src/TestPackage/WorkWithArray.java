@@ -155,4 +155,16 @@ public class WorkWithArray {
             arrayWithoutCopies[i] = array[i];
         return arrayWithoutCopies;
     }
+    public static int[] GetLast(int[] array, int count){
+        if (count<=array.length){
+            int[] lastEl = new int[count];
+            for (int i = 0; i < count; i++) {
+                lastEl[i] = array[array.length - 1 - count + i];
+            }
+            return  lastEl;
+        }
+        else{
+            return  array;
+        }
+    }
 }

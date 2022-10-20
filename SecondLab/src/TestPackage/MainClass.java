@@ -23,6 +23,13 @@ public class MainClass {
         for(int i = 0; i < solutionArray1.length; i++)
             s2.append(solutionArray1[i] + " ");
         System.out.println("Конечный массив: " + s2);
+
+
+        int[] resultArr = WorkWithArray.GetLast(questArray1,4);
+        for (int i = 0; i < resultArr.length; i++) {
+            System.out.println(resultArr[i]);
+        }
+
     }
     static void GetBubbleInfo(int array[][])
     {
